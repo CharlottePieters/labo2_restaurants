@@ -15,7 +15,7 @@
         <tr th:each="restaurant : ${restaurants}">
             <td th:text="${restaurant.name}"></td>
             <td th:text="${restaurant.address}"></td>
-            <td th:text="${restaurant.rating}">/5</td>
+            <td><span th:text="${restaurant.rating}"></span>/5</td>
         </tr>
     </table>
 </body>
