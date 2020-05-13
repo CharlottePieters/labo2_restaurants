@@ -11,4 +11,3 @@ public class Labo2RestaurantsApplication {
     }
 
 }
-//test test
