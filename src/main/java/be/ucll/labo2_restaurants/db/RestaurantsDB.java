@@ -1,13 +1,14 @@
-package be.ucll.labo2_restaurants.DB;
+package be.ucll.labo2_restaurants.db;
 
 import be.ucll.labo2_restaurants.domain.Restaurant;
+import be.ucll.labo2_restaurants.service.RestaurantService;
 import org.springframework.stereotype.Repository;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 
 @Repository
-public class RestaurantsDB implements Serializable {
+public class RestaurantsDB implements Serializable, RestaurantService {
     private ArrayList<Restaurant> restaurants;
 
     public RestaurantsDB(){
@@ -17,6 +18,7 @@ public class RestaurantsDB implements Serializable {
         this.addRestaurant("Alma 3", "Steengroevenlaan 3 – 3001 Heverlee", 4.1);
     }
 
+    @Override
     public ArrayList<Restaurant> getRestaurants() {
         return restaurants;
     }
@@ -25,6 +27,7 @@ public class RestaurantsDB implements Serializable {
         this.restaurants = restaurants;
     }
 
+    @Override
     public void addRestaurant(Restaurant restaurant){
         this.restaurants.add(restaurant);
     }
